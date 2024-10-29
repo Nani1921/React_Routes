@@ -2,7 +2,7 @@
 const Home = () => {
     return (
       <div>
-        <h1>Welcome to the E Commers Website</h1>
+        <h1>Welcome to the E Commerce Website</h1>
         <p>Find the best deals here. Order Now.</p>
       </div>
     );

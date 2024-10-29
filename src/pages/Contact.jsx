@@ -1,23 +1,57 @@
-// src/pages/Contact.jsx
+// src/pages/Booking.jsx
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 const Contact = () => {
-    return (
-      <div>
-        <h1>Contact Us</h1>
-        <form>
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" required />
-  
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-  
-          <label htmlFor="message">Message:</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-  
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    );
+  const [name, setName] = useState("");
+  const [email, setDestination] = useState("");
+  const [phonenumber, setDate] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Contact Details:", { name, email, phonenumber });
+    navigate("/confirmation", { state: { name, email, phonenumber } });
   };
-  
-  export default Contact;
-  
+
+  return (
+    <div>
+      <h2>Contact Us</h2>
+      <form className="booking-form" onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="Email">Email:</label>
+          <input
+            type="text"
+            id="Email"
+            value={email}
+            onChange={(e) => setDestination(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="PhoneNumber">Phone Number:</label>
+          <input
+            type="number"
+            id="PhoneNumber"
+            value={phonenumber}
+            onChange={(e) => setDate(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit">Contact</button>
+      </form>
+    </div>
+  );
+};
+
+export default Contact;

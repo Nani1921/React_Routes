@@ -5,10 +5,10 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <header>
-      <div className="logo-container">
+      <div >
         
-        {/* Replace with your logo path */}
-        <h1 className="site-name">E-Commers</h1>
+        
+        <h1 className="dd" >E-Commerce</h1>
       </div>
       <nav>
         <ul>
@@ -33,6 +33,14 @@ const Header = () => {
              
             >
               Contact
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/user"
+             
+            >
+              Users
             </NavLink>
           </li>
           
