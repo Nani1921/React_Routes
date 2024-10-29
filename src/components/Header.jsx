@@ -37,7 +37,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to="/user"
+              to="/users"
              
             >
               Users
